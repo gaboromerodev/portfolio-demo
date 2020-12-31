@@ -151,6 +151,9 @@ nav {
 
 .section__subtitle--intro {
     display: inline-block;
+    left: -1em;
+    position: relative;
+    width: calc(100% + 1em);
 }
 
 @media (min-width: 600px) {
@@ -229,5 +232,49 @@ nav {
 
     .service + .service {
         margin-left: 4em;
+    }
+}
+
+/* About me section */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section__subtitle--about {
+    left: -1em;
+    position: relative;
+    width: calc(100% + 1em);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+        "title img"
+        "subtitle img"
+        "text img";
+        grid-column-gap: 2em; 
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-column: -1 / 1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        padding-left: 1em;
+        width: calc(100% + 2em);
+        z-index: -1;
+    }
+
+    .about-me__img {
+        grid-area: img;
+        z-index: 2;
     }
 }
